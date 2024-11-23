@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+            <html lang="en">
+              <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link
+                  href="https://cdn.jsdelivr.net/npm/@mappedin/mappedin-js@6.0.1-alpha.4/lib/index.css"
+                  rel="stylesheet"
+                />
+
+                <title>Mappedin Web SDK v6 Getting Started with JSDelivr</title>
+              </head>
+              <body>
+                <div id="mappedin-map"></div>
+                <script type="module">
+                  import {
+                    getMapData,
+                    show3dMap,
+                  } from "https://cdn.jsdelivr.net/npm/@mappedin/mappedin-js@6.0.1-alpha.4/lib/esm/index.js";
+
+                  const options = {
+                    key: "65ca6d27d53f21f234ae6395",
+                    secret: "0b25fc24d564c644443663d0b4d083605090d349975d0983fc96e06a5b1934dd",
+                    mapId: "660c0c6e7c0c4fe5b4cc484c",
+                  };
+
+                  const mapData = await getMapData(options);
+                  const mapView = await show3dMap(
+                    document.getElementById("mappedin-map"),
+                    mapData
+                  );
+                </script>
+              </body>
+            </html>
